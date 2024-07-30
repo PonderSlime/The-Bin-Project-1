@@ -1,10 +1,3 @@
-from picozero import Speaker
-from speaker_machine import play_liten_mus
-from random import randint
-
-
-play_liten_mus()
-
 from machine import Pin, I2C
 from ssd1306 import SSD1306_I2C
 import framebuf, sys

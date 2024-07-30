@@ -7,8 +7,8 @@
     {
       "type": "wokwi-membrane-keypad",
       "id": "wokwi-membrane-keypad-0",
-      "top": -117.2,
-      "left": -61.6,
+      "top": -98,
+      "left": -205.6,
       "attrs": {}
     },
     { "type": "SSD1306 ", "id": "SSD1306 -0", "top": 430, "left": 0, "attrs": {} },
@@ -19,7 +19,7 @@
       "left": -183.4,
       "attrs": {}
     },
-    { "type": "wokwi-ky-040", "id": "wokwi-ky-040-0", "top": 308.9, "left": 316, "attrs": {} },
+    { "type": "wokwi-ky-040", "id": "wokwi-ky-040-0", "top": 558.5, "left": 172, "attrs": {} },
     { "type": "wokwi-dht22", "id": "wokwi-dht22-0", "top": 585.9, "left": 52.2, "attrs": {} },
     {
       "type": "wokwi-analog-joystick",
@@ -41,12 +41,20 @@
   "connections": [
     [ "pico:GP0", "$serialMonitor:RX", "", [] ],
     [ "pico:GP1", "$serialMonitor:TX", "", [] ],
-    [ "pico:GP5", "wokwi-buzzer-0:2", "green", [ "h-230.4", "v-19.2" ] ],
-    [ "pico:GND.2", "wokwi-buzzer-0:1", "black", [ "h0" ] ],
     [ "oled1:GND", "pico:GND.8", "black", [ "v0" ] ],
     [ "pico:3V3_EN", "oled1:VCC", "green", [ "h57.91", "v-19.2", "h57.6" ] ],
     [ "oled1:SCL", "pico:GP27", "green", [ "v-38.4", "h-86.1", "v76.8" ] ],
-    [ "oled1:SDA", "pico:GP26", "green", [ "v-48", "h-105.53", "v105.6" ] ]
+    [ "oled1:SDA", "pico:GP26", "green", [ "v-48", "h-105.53", "v105.6" ] ],
+    [ "wokwi-buzzer-0:1", "pico:GND.4", "green", [ "v0" ] ],
+    [ "pico:GP13", "wokwi-buzzer-0:2", "green", [ "h0" ] ],
+    [ "wokwi-membrane-keypad-0:C4", "pico:GP2", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:C3", "pico:GP3", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:C2", "pico:GP4", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:C1", "pico:GP5", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:R4", "pico:GP6", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:R3", "pico:GP7", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:R2", "pico:GP8", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:R1", "pico:GP9", "green", [ "v0" ] ]
   ],
   "dependencies": {}
 }
