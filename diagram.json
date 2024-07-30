@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "author": "The Bin - Hack Club",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-pi-pico-w", "id": "pico", "top": 303.95, "left": 32.35, "attrs": {} },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "wokwi-membrane-keypad-0",
+      "top": -117.2,
+      "left": -61.6,
+      "attrs": {}
+    },
+    { "type": "SSD1306 ", "id": "SSD1306 -0", "top": 430, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-neopixel",
+      "id": "wokwi-neopixel-0",
+      "top": 534.1,
+      "left": -183.4,
+      "attrs": {}
+    },
+    { "type": "wokwi-ky-040", "id": "wokwi-ky-040-0", "top": 308.9, "left": 316, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "wokwi-dht22-0", "top": 585.9, "left": 52.2, "attrs": {} },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "wokwi-analog-joystick-0",
+      "top": 527.4,
+      "left": -129,
+      "attrs": {}
+    },
+    { "type": "wokwi-buzzer", "id": "wokwi-buzzer-0", "top": 261.6, "left": -228.6, "attrs": {} },
+    { "type": "wokwi-ds1307", "id": "wokwi-ds1307-0", "top": 407.4, "left": 297.7, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 339.14,
+      "left": 173.03,
+      "attrs": { "i2cAddress": "0x3c" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "pico:GP5", "wokwi-buzzer-0:2", "green", [ "h-230.4", "v-19.2" ] ],
+    [ "pico:GND.2", "wokwi-buzzer-0:1", "black", [ "h0" ] ],
+    [ "oled1:GND", "pico:GND.8", "black", [ "v0" ] ],
+    [ "pico:3V3_EN", "oled1:VCC", "green", [ "h57.91", "v-19.2", "h57.6" ] ],
+    [ "oled1:SCL", "pico:GP27", "green", [ "v-38.4", "h-86.1", "v76.8" ] ],
+    [ "oled1:SDA", "pico:GP26", "green", [ "v-48", "h-105.53", "v105.6" ] ]
+  ],
+  "dependencies": {}
+}
