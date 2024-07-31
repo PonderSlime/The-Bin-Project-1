@@ -8,8 +8,8 @@
       "type": "wokwi-membrane-keypad",
       "id": "wokwi-membrane-keypad-0",
       "top": -98,
-      "left": -205.6,
-      "attrs": {}
+      "left": -201.3,
+      "attrs": { "columns": "3" }
     },
     { "type": "SSD1306 ", "id": "SSD1306 -0", "top": 430, "left": 0, "attrs": {} },
     {
@@ -48,13 +48,13 @@
     [ "wokwi-buzzer-0:1", "pico:GND.4", "green", [ "v0" ] ],
     [ "pico:GP13", "wokwi-buzzer-0:2", "green", [ "h0" ] ],
     [ "wokwi-membrane-keypad-0:C4", "pico:GP2", "green", [ "v0" ] ],
-    [ "wokwi-membrane-keypad-0:C3", "pico:GP3", "green", [ "v0" ] ],
-    [ "wokwi-membrane-keypad-0:C2", "pico:GP4", "green", [ "v0" ] ],
-    [ "wokwi-membrane-keypad-0:C1", "pico:GP5", "green", [ "v0" ] ],
-    [ "wokwi-membrane-keypad-0:R4", "pico:GP6", "green", [ "v0" ] ],
-    [ "wokwi-membrane-keypad-0:R3", "pico:GP7", "green", [ "v0" ] ],
-    [ "wokwi-membrane-keypad-0:R2", "pico:GP8", "green", [ "v0" ] ],
-    [ "wokwi-membrane-keypad-0:R1", "pico:GP9", "green", [ "v0" ] ]
+    [ "wokwi-membrane-keypad-0:R1", "pico:GP2", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:R2", "pico:GP3", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:R3", "pico:GP4", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:R4", "pico:GP5", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:C1", "pico:GP6", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:C2", "pico:GP7", "green", [ "v0" ] ],
+    [ "wokwi-membrane-keypad-0:C3", "pico:GP8", "green", [ "v0" ] ]
   ],
   "dependencies": {}
 }
