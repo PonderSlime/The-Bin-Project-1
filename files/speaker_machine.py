@@ -8,3 +8,6 @@ def c_note():
 
 def d_note():
     speaker.play('d4', 0.5) # play the middle d for half a second
+
+def d2_note():
+    speaker.play('d2', 0.5) # play the middle d for half a second
