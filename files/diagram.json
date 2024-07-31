@@ -21,8 +21,8 @@
     {
       "type": "wokwi-neopixel",
       "id": "wokwi-neopixel-0",
-      "top": 534.1,
-      "left": -183.4,
+      "top": 274.9,
+      "left": 114.2,
       "attrs": {}
     },
     { "type": "wokwi-ky-040", "id": "wokwi-ky-040-0", "top": 520.1, "left": 220, "attrs": {} },
@@ -35,7 +35,7 @@
       "attrs": {}
     },
     { "type": "wokwi-buzzer", "id": "wokwi-buzzer-0", "top": 261.6, "left": -228.6, "attrs": {} },
-    { "type": "wokwi-ds1307", "id": "wokwi-ds1307-0", "top": 570.6, "left": 374.5, "attrs": {} },
+    { "type": "wokwi-ds1307", "id": "wokwi-ds1307-0", "top": 676.2, "left": -115.1, "attrs": {} },
     {
       "type": "board-ssd1306",
       "id": "oled1",
@@ -70,7 +70,10 @@
     [ "oled1:SDA", "pico:GP18", "green", [ "v-38.4", "h-172.73", "v153.6" ] ],
     [ "wokwi-analog-joystick-0:VERT", "pico:GP26", "green", [ "v0" ] ],
     [ "wokwi-analog-joystick-0:HORZ", "pico:GP27", "green", [ "v163.2", "h-96" ] ],
-    [ "wokwi-ky-040-0:DT", "pico:GP20", "green", [ "h28.8", "v-95.9", "h-230.4", "v9.6" ] ]
+    [ "wokwi-ky-040-0:DT", "pico:GP20", "green", [ "h28.8", "v-95.9", "h-230.4", "v9.6" ] ],
+    [ "wokwi-neopixel-0:VDD", "pico:VBUS", "green", [ "h0" ] ],
+    [ "wokwi-neopixel-0:VSS", "pico:GND.8", "green", [ "v47.1", "h-0.8" ] ],
+    [ "wokwi-neopixel-0:DIN", "pico:GP28", "green", [ "h18.4", "v86.4" ] ]
   ],
   "dependencies": {}
 }
