@@ -4,11 +4,10 @@ from speaker_machine import c_note
 
 row_list = [2, 3, 4, 5]  
 col_list = [6, 7, 8]
-
 for x in range(0, 4):
   row_list[x] = Pin(row_list[x], Pin.OUT)
   row_list[x].value(1)
-   
+  
 for x in range(0 ,3):
   col_list[x] = Pin(col_list[x], Pin.IN, Pin.PULL_UP)
 
@@ -17,7 +16,7 @@ key_list = [["1", "2", "3"],\
       ["7", "8", "9"],\
       ["*", "0", "#"]]
 
-def keypad(col, row):
+def Keypad(col, row):
   for r in row:
     r.value(0)
     result = [col[0].value(), col[1].value(), col[2].value()]
@@ -27,8 +26,8 @@ def keypad(col, row):
       return (key)
     r.value(1)
 
-while True:
-  key = keypad(col_list, row_list)
+def loop_keypad():
+  key = Keypad(col_list, row_list)
   if key != None:
     print("key: "+key)
     c_note()

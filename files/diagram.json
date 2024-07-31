@@ -3,7 +3,13 @@
   "author": "The Bin - Hack Club",
   "editor": "wokwi",
   "parts": [
-    { "type": "board-pi-pico-w", "id": "pico", "top": 303.95, "left": 32.35, "attrs": {} },
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": 303.95,
+      "left": 32.35,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
     {
       "type": "wokwi-membrane-keypad",
       "id": "wokwi-membrane-keypad-0",
@@ -19,7 +25,7 @@
       "left": -183.4,
       "attrs": {}
     },
-    { "type": "wokwi-ky-040", "id": "wokwi-ky-040-0", "top": 558.5, "left": 172, "attrs": {} },
+    { "type": "wokwi-ky-040", "id": "wokwi-ky-040-0", "top": 520.1, "left": 104.8, "attrs": {} },
     { "type": "wokwi-dht22", "id": "wokwi-dht22-0", "top": 585.9, "left": 52.2, "attrs": {} },
     {
       "type": "wokwi-analog-joystick",
@@ -42,7 +48,6 @@
     [ "pico:GP0", "$serialMonitor:RX", "", [] ],
     [ "pico:GP1", "$serialMonitor:TX", "", [] ],
     [ "oled1:GND", "pico:GND.8", "black", [ "v0" ] ],
-    [ "pico:3V3_EN", "oled1:VCC", "green", [ "h57.91", "v-19.2", "h57.6" ] ],
     [ "oled1:SCL", "pico:GP27", "green", [ "v-38.4", "h-86.1", "v76.8" ] ],
     [ "oled1:SDA", "pico:GP26", "green", [ "v-48", "h-105.53", "v105.6" ] ],
     [ "wokwi-buzzer-0:1", "pico:GND.4", "green", [ "v0" ] ],
@@ -54,7 +59,13 @@
     [ "wokwi-membrane-keypad-0:R4", "pico:GP5", "green", [ "v0" ] ],
     [ "wokwi-membrane-keypad-0:C1", "pico:GP6", "green", [ "v0" ] ],
     [ "wokwi-membrane-keypad-0:C2", "pico:GP7", "green", [ "v0" ] ],
-    [ "wokwi-membrane-keypad-0:C3", "pico:GP8", "green", [ "v0" ] ]
+    [ "wokwi-membrane-keypad-0:C3", "pico:GP8", "green", [ "v0" ] ],
+    [ "wokwi-ky-040-0:CLK", "pico:GP17", "green", [ "h19.2", "v-38.4" ] ],
+    [ "wokwi-ky-040-0:DT", "pico:GP18", "green", [ "h28.8", "v-57.5" ] ],
+    [ "wokwi-ky-040-0:GND", "pico:GND.5", "black", [ "h38.4", "v-85.6" ] ],
+    [ "pico:GP22", "wokwi-ky-040-0:SW", "green", [ "h38.71", "v38.4", "h144", "v86.4" ] ],
+    [ "wokwi-ky-040-0:VCC", "pico:3V3_EN", "red", [ "h57.6", "v-105.2", "h-124.8", "v-9.6" ] ],
+    [ "oled1:VCC", "pico:3V3_EN", "red", [ "v-19.2", "h-67.05", "v19.2" ] ]
   ],
   "dependencies": {}
 }
