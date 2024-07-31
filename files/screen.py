@@ -51,7 +51,7 @@ def loop_screen():
     utime.sleep(1)
 def main():
     import keypad
-    i2c_dev = init_i2c(scl_pin=27, sda_pin=26)
+    i2c_dev = init_i2c(scl_pin=19, sda_pin=18)
     oled = SSD1306_I2C(pix_res_x, pix_res_y, i2c_dev)
     display_logo(oled)
     display_text(oled)

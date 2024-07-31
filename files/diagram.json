@@ -25,22 +25,22 @@
       "left": -183.4,
       "attrs": {}
     },
-    { "type": "wokwi-ky-040", "id": "wokwi-ky-040-0", "top": 520.1, "left": 104.8, "attrs": {} },
+    { "type": "wokwi-ky-040", "id": "wokwi-ky-040-0", "top": 520.1, "left": 220, "attrs": {} },
     { "type": "wokwi-dht22", "id": "wokwi-dht22-0", "top": 585.9, "left": 52.2, "attrs": {} },
     {
       "type": "wokwi-analog-joystick",
       "id": "wokwi-analog-joystick-0",
-      "top": 527.4,
-      "left": -129,
+      "top": 114.6,
+      "left": 149.4,
       "attrs": {}
     },
     { "type": "wokwi-buzzer", "id": "wokwi-buzzer-0", "top": 261.6, "left": -228.6, "attrs": {} },
-    { "type": "wokwi-ds1307", "id": "wokwi-ds1307-0", "top": 407.4, "left": 297.7, "attrs": {} },
+    { "type": "wokwi-ds1307", "id": "wokwi-ds1307-0", "top": 570.6, "left": 374.5, "attrs": {} },
     {
       "type": "board-ssd1306",
       "id": "oled1",
-      "top": 339.14,
-      "left": 173.03,
+      "top": 348.74,
+      "left": 355.43,
       "attrs": { "i2cAddress": "0x3c" }
     }
   ],
@@ -48,8 +48,6 @@
     [ "pico:GP0", "$serialMonitor:RX", "", [] ],
     [ "pico:GP1", "$serialMonitor:TX", "", [] ],
     [ "oled1:GND", "pico:GND.8", "black", [ "v0" ] ],
-    [ "oled1:SCL", "pico:GP27", "green", [ "v-38.4", "h-86.1", "v76.8" ] ],
-    [ "oled1:SDA", "pico:GP26", "green", [ "v-48", "h-105.53", "v105.6" ] ],
     [ "wokwi-buzzer-0:1", "pico:GND.4", "green", [ "v0" ] ],
     [ "pico:GP13", "wokwi-buzzer-0:2", "green", [ "h0" ] ],
     [ "wokwi-membrane-keypad-0:C4", "pico:GP2", "green", [ "v0" ] ],
@@ -61,11 +59,18 @@
     [ "wokwi-membrane-keypad-0:C2", "pico:GP7", "green", [ "v0" ] ],
     [ "wokwi-membrane-keypad-0:C3", "pico:GP8", "green", [ "v0" ] ],
     [ "wokwi-ky-040-0:CLK", "pico:GP17", "green", [ "h19.2", "v-38.4" ] ],
-    [ "wokwi-ky-040-0:DT", "pico:GP18", "green", [ "h28.8", "v-57.5" ] ],
     [ "wokwi-ky-040-0:GND", "pico:GND.5", "black", [ "h38.4", "v-85.6" ] ],
-    [ "pico:GP22", "wokwi-ky-040-0:SW", "green", [ "h38.71", "v38.4", "h144", "v86.4" ] ],
-    [ "wokwi-ky-040-0:VCC", "pico:3V3_EN", "red", [ "h57.6", "v-105.2", "h-124.8", "v-9.6" ] ],
-    [ "oled1:VCC", "pico:3V3_EN", "red", [ "v-19.2", "h-67.05", "v19.2" ] ]
+    [ "pico:GP22", "wokwi-ky-040-0:SW", "green", [ "h38.71", "v28.8", "h201.6", "v95.9" ] ],
+    [ "wokwi-analog-joystick-0:GND", "pico:GND.8", "black", [ "v0" ] ],
+    [ "wokwi-analog-joystick-0:SEL", "pico:GP1", "green", [ "v28.8", "h-163.2", "v28.8" ] ],
+    [ "oled1:VCC", "pico:3V3", "red", [ "v-9.6", "h-57.45", "v9.6" ] ],
+    [ "wokwi-analog-joystick-0:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "wokwi-ky-040-0:VCC", "pico:3V3", "red", [ "h48", "v-114.8", "h-67.2", "v-86.4", "h-9.6" ] ],
+    [ "oled1:SCL", "pico:GP19", "green", [ "v-28.8", "h-153.3", "v124.8" ] ],
+    [ "oled1:SDA", "pico:GP18", "green", [ "v-38.4", "h-172.73", "v153.6" ] ],
+    [ "wokwi-analog-joystick-0:VERT", "pico:GP26", "green", [ "v0" ] ],
+    [ "wokwi-analog-joystick-0:HORZ", "pico:GP27", "green", [ "v163.2", "h-96" ] ],
+    [ "wokwi-ky-040-0:DT", "pico:GP20", "green", [ "h28.8", "v-95.9", "h-230.4", "v9.6" ] ]
   ],
   "dependencies": {}
 }
