@@ -2,8 +2,8 @@ from machine import Pin
 import utime
 from speaker_machine import c_note
 
-row_list = [2, 3, 4, 5]  
-col_list = [6, 7, 8]
+row_list = [7, 8, 9, 10]  
+col_list = [11, 12, 13]
 for x in range(0, 4):
   row_list[x] = Pin(row_list[x], Pin.OUT)
   row_list[x].value(1)
