@@ -11,10 +11,17 @@
       "attrs": { "env": "micropython-20231227-v1.22.0" }
     },
     {
+      "type": "wokwi-max7219-matrix",
+      "id": "wokwi-max7219-matrix-0",
+      "top": 365.4,
+      "left": -245.79,
+      "attrs": {}
+    },
+    {
       "type": "wokwi-membrane-keypad",
       "id": "wokwi-membrane-keypad-0",
-      "top": -98,
-      "left": -201.3,
+      "top": -2,
+      "left": -191.7,
       "attrs": { "columns": "3" }
     },
     { "type": "SSD1306 ", "id": "SSD1306 -0", "top": 430, "left": 0, "attrs": {} },
@@ -29,8 +36,8 @@
     {
       "type": "wokwi-dht22",
       "id": "wokwi-dht22-0",
-      "top": 583.5,
-      "left": 54,
+      "top": 564.3,
+      "left": 44.4,
       "rotate": 180,
       "attrs": {}
     },
@@ -38,23 +45,22 @@
       "type": "wokwi-analog-joystick",
       "id": "wokwi-analog-joystick-0",
       "top": 114.6,
-      "left": 149.4,
+      "left": 111,
       "attrs": {}
     },
     {
       "type": "wokwi-buzzer",
       "id": "wokwi-buzzer-0",
-      "top": 427.5,
-      "left": -165.9,
+      "top": 446.7,
+      "left": -204.3,
       "rotate": -90,
       "attrs": {}
     },
-    { "type": "wokwi-ds1307", "id": "wokwi-ds1307-0", "top": 599.4, "left": -182.3, "attrs": {} },
     {
       "type": "board-ssd1306",
       "id": "oled1",
-      "top": 348.74,
-      "left": 355.43,
+      "top": 346.37,
+      "left": 223.54,
       "rotate": -90,
       "attrs": { "i2cAddress": "0x3c" }
     }
@@ -62,9 +68,7 @@
   "connections": [
     [ "pico:GP0", "$serialMonitor:RX", "", [] ],
     [ "pico:GP1", "$serialMonitor:TX", "", [] ],
-    [ "oled1:GND", "pico:GND.8", "black", [ "h-26.29", "v-69.57", "h-240.31" ] ],
-    [ "wokwi-buzzer-0:1", "pico:GND.4", "green", [ "v0" ] ],
-    [ "pico:GP13", "wokwi-buzzer-0:2", "green", [ "h0" ] ],
+    [ "oled1:GND", "pico:GND.8", "black", [ "h-26.29", "v-67.2", "h-156.42" ] ],
     [ "wokwi-membrane-keypad-0:C4", "pico:GP2", "green", [ "v0" ] ],
     [ "wokwi-membrane-keypad-0:R1", "pico:GP2", "green", [ "v0" ] ],
     [ "wokwi-membrane-keypad-0:R2", "pico:GP3", "green", [ "v0" ] ],
@@ -77,12 +81,17 @@
     [ "wokwi-ky-040-0:GND", "pico:GND.5", "black", [ "h38.4", "v-85.6" ] ],
     [ "pico:GP22", "wokwi-ky-040-0:SW", "green", [ "h38.71", "v28.8", "h201.6", "v95.9" ] ],
     [ "wokwi-analog-joystick-0:GND", "pico:GND.8", "black", [ "v0" ] ],
-    [ "wokwi-analog-joystick-0:SEL", "pico:GP1", "green", [ "v28.8", "h-163.2", "v28.8" ] ],
+    [ "wokwi-analog-joystick-0:SEL", "pico:GP1", "green", [ "v28.8", "h-144", "v67.2" ] ],
     [ "oled1:VCC", "pico:3V3", "red", [ "v-2.52", "h-57.45", "v-38.4" ] ],
     [ "wokwi-analog-joystick-0:VCC", "pico:3V3", "red", [ "v0" ] ],
-    [ "wokwi-ky-040-0:VCC", "pico:3V3", "red", [ "h48", "v-114.8", "h-67.2", "v-86.4", "h-9.6" ] ],
-    [ "oled1:SCL", "pico:GP19", "green", [ "h-16.69", "v-12.27", "h-141.63", "v86.36" ] ],
-    [ "oled1:SDA", "pico:GP18", "green", [ "h-7.09", "v-31.24", "h-170.66", "v124.76" ] ],
+    [
+      "wokwi-ky-040-0:VCC",
+      "pico:3V3",
+      "red",
+      [ "h48", "v-114.8", "h-67.2", "v-86.4", "h-211.51" ]
+    ],
+    [ "oled1:SCL", "pico:GP19", "green", [ "h-16.69", "v-0.3", "h-2.51", "v76.76" ] ],
+    [ "oled1:SDA", "pico:GP18", "green", [ "h-7.09", "v-0.07", "h-21.71", "v95.96" ] ],
     [ "wokwi-analog-joystick-0:VERT", "pico:GP26", "green", [ "v0" ] ],
     [ "wokwi-analog-joystick-0:HORZ", "pico:GP27", "green", [ "v163.2", "h-96" ] ],
     [ "wokwi-ky-040-0:DT", "pico:GP20", "green", [ "h28.8", "v-95.9", "h-230.4", "v9.6" ] ],
@@ -91,7 +100,19 @@
     [ "wokwi-neopixel-0:DIN", "pico:GP0", "green", [ "h-0.8", "v-9.6", "h-96" ] ],
     [ "wokwi-dht22-0:VCC", "pico:3V3", "red", [ "v-124.8", "h9.29" ] ],
     [ "wokwi-dht22-0:GND", "pico:GND.5", "black", [ "v0" ] ],
-    [ "pico:GP15", "wokwi-dht22-0:SDA", "green", [ "h9.6", "v57.64", "h38.4" ] ]
+    [ "pico:GP15", "wokwi-dht22-0:SDA", "green", [ "h9.6", "v57.64", "h38.4" ] ],
+    [
+      "wokwi-max7219-matrix-0:V+",
+      "pico:VBUS",
+      "green",
+      [ "h0", "v-67.2", "h153.6", "v-19.2", "h86.4" ]
+    ],
+    [ "wokwi-max7219-matrix-0:GND", "pico:GND.3", "black", [ "h48", "v9.6" ] ],
+    [ "wokwi-max7219-matrix-0:CLK", "pico:GP10", "green", [ "h38.4", "v19.2" ] ],
+    [ "wokwi-max7219-matrix-0:DIN", "pico:GP11", "green", [ "h28.8", "v38.4" ] ],
+    [ "wokwi-buzzer-0:1", "pico:GND.4", "green", [ "h76.8", "v-9.6" ] ],
+    [ "wokwi-buzzer-0:2", "pico:GP14", "green", [ "h67.2", "v0.4" ] ],
+    [ "wokwi-max7219-matrix-0:CS", "pico:GP13", "green", [ "h19.2", "v38.4" ] ]
   ],
   "dependencies": {}
 }

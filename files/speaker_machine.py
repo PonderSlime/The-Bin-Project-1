@@ -1,6 +1,6 @@
 from picozero import Speaker
 
-speaker = Speaker(13)
+speaker = Speaker(14)
 BEAT = 0.4
 
 def c_note():
