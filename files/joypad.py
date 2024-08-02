@@ -1,6 +1,6 @@
 from machine import Pin, ADC
-from speaker_machine import c_note
-from speaker_machine import d_note
+#from speaker_machine import c_note
+#from speaker_machine import d_note
 import utime
 
 xAxis = ADC(Pin(27))
@@ -13,7 +13,7 @@ def joy():
     yValue = yAxis.read_u16()
     buttonValue= button.value()
     print(str(xValue) +", " + str(yValue) + " -- " + str(buttonValue))
-    utime.sleep(0.1)
+    #utime.sleep(0.1)
 
     xStatus = "middle"
     yStatus = "middle"
@@ -21,19 +21,19 @@ def joy():
 
     if xValue <= 600:
         xStatus = "left"
-        c_note()
+        #c_note()
     elif xValue >= 60000:
         xStatus = "right"
-        c_note()
+        #c_note()
     if yValue <= 600:
         yStatus = "up"
-        c_note()
+        #c_note()
     elif yValue >= 60000:
         yStatus = "down"
-        c_note()
+        #c_note()
     if buttonValue == 0:
         buttonStatus = "pressed"
-        d_note()
+        #d_note()
 
     print("X: " + xStatus + ", Y: " + yStatus + " -- button " + buttonStatus)
 

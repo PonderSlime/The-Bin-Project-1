@@ -1,6 +1,6 @@
 from machine import Pin
 import utime
-from speaker_machine import c_note
+#from speaker_machine import c_note
 
 row_list = [7, 8, 9, 10]  
 col_list = [11, 12, 13]
@@ -30,5 +30,5 @@ def loop_keypad():
   key = Keypad(col_list, row_list)
   if key != None:
     print("key: "+key)
-    c_note()
-    utime.sleep(0.3)
+    #c_note()
+    #utime.sleep(0.3)

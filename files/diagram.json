@@ -8,7 +8,7 @@
       "id": "pico",
       "top": 303.95,
       "left": 32.35,
-      "attrs": { "env": "micropython-20231227-v1.22.0" }
+      "attrs": { "env": "micropython-20231005-v1.21.0" }
     },
     {
       "type": "wokwi-max7219-matrix",
