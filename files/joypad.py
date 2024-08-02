@@ -1,6 +1,5 @@
 from machine import Pin, ADC
-#from speaker_machine import c_note
-#from speaker_machine import d_note
+#from speaker_machine import c_note, d_note
 import utime
 
 xAxis = ADC(Pin(27))

@@ -11,6 +11,4 @@ def d_note():
 
 def d2_note():
     speaker.play('d2', 0.5) # play the middle d for half a second
-
-def loz():
     
