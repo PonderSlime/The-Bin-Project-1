@@ -148,7 +148,7 @@ while True:
     if len(devices) == 0:
       print("No i2c device !")
     else:
-      if time.ticks_ms() > 500 + lasttime:
+      if time.ticks_ms() > 60000 + lasttime:
         
         T,H = dht_sensor.read()
         if T is None:
@@ -171,9 +171,8 @@ while True:
         
    # time.sleep(0.04)
    
-    if time.ticks_ms() > 4 + lasttimematrix:
+    if time.ticks_ms() > 75 + lasttimematrix:
         lasttimematrix = time.ticks_ms()  
-        print("display")
         scroll_ammt -= 1
         
     if scroll_ammt in range(32, -column, -1):
@@ -194,7 +193,7 @@ while True:
 #     val_new = r.value()  
 #     if SW.value()==0 and n==0:  
 #         print("Button Pressed")  
-#         print("Selected Number is : ",val_new)
+#         print("Selected Number is : ",val_new) 
 #         #c_note()
 #         np[0] = (255, 255, 0) # set to yellow, full brightness
 #         np.write()
