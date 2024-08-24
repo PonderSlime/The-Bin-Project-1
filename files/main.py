@@ -26,14 +26,14 @@ song = '4 F#5 1 1;0 D5 1 1;2 E5 1 1;8 A5 1 1;12 F#5 1 1;16 E5 1 1;20 D5 1 1;32 F
 # continuously beep at 1 sec interval while the board has power
 # note: a passive buzzer can also be used to play different tones
 # 
-dht_sensor=PicoDHT22(Pin(15,Pin.IN,Pin.PULL_UP),dht11=False)
+dht_sensor=PicoDHT22(Pin(15,Pin.IN,Pin.PULL_UP),dht11=True)
 # #You can choose any other combination of I2C pins
-# i2c = SoftI2C(scl=Pin(19), sda=Pin(18))
-# 
-# oled_width = 128
-# oled_height = 64
-# oled = ssd1306.SSD1306_I2C(oled_width, oled_height, i2c)
-# 
+i2c = SoftI2C(scl=Pin(19), sda=Pin(18))
+ 
+oled_width = 128
+oled_height = 64
+oled = ssd1306.SSD1306_I2C(oled_width, oled_height, i2c)
+ 
 #Find a piece of music on onlinesequencer.net, click edit,
 #then select all notes with CTRL+A and copy them with CTRL+C
  
@@ -129,40 +129,67 @@ scroll_ammt = 32
 #         d_note()
 # 
 #     #print("X: " + xStatus + ", Y: " + yStatus + " -- button " + buttonStatus)
-# 
+#
+oled.fill(0)
+oled.text("Hello, World!", 10, 10)
+oled.show()
+temp_tick = 0
+lasttime = time.ticks_ms()
+lasttimesong = time.ticks_ms()
+lasttimematrix = time.ticks_ms()
+
 while True:
 #     
-   scroll_ammt -= 1
+    
 #   loop_keypad()
 #   joy()
-   print(mySong.tick())
-   #T,H = dht_sensor.read()
-   #if T is None:
-       #continue
-       #print(" sensor error")
-       #d_note()
-   #else:
-     #print("{}'C  {}%".format(T,H))
-#     oled.fill(0)
-#     oled.text(str('H: ' +"{:0.2f}".format(H)+ "  %",2),40,5)
-#     oled.text(str('T: ' +"{:0.2f}".format(T)+ "  C",2),40,19)
-#     oled.show()
-#     #time.sleep_ms(5000)
-   time.sleep(0.04)
-#   
-   if scroll_ammt in range(32, -column, -1):
-       display.fill(0)
+    devices = i2c.scan()
+
+    if len(devices) == 0:
+      print("No i2c device !")
+    else:
+      if time.ticks_ms() > 500 + lasttime:
+        
+        T,H = dht_sensor.read()
+        if T is None:
+            continue
+            print(" sensor error")
+            #d_note()
+        else:
+            print("{}'C  {}%".format(T,H))
+            oled.fill(0)
+            oled.text(str('H: ' +"{:0.2f}".format(H)+ "  %",2),40,5)
+            oled.text(str('T: ' +"{:0.2f}".format(T)+ "  C",2),40,19)
+            oled.show()
+        lasttime = time.ticks_ms()
+    if time.ticks_ms() > 40 + lasttimesong:
+        lasttimesong = time.ticks_ms()
+        print(mySong.tick())
+        
+        
+    
+        
+   # time.sleep(0.04)
+   
+    if time.ticks_ms() > 4 + lasttimematrix:
+        lasttimematrix = time.ticks_ms()  
+        print("display")
+        scroll_ammt -= 1
+        
+    if scroll_ammt in range(32, -column, -1):
+        display.fill(0)
  
            # Write the scrolling text in to frame buffer
-       display.text(scrolling_message ,scroll_ammt,0,1)
+        display.text(scrolling_message ,scroll_ammt,0,1)
            
            #Show the display
-       display.show()
+        display.show()
        
            #Set the Scrolling speed. Here it is 50mS.
        #time.sleep(0.0)
-   else:
-         scroll_ammt = 32
+    else:
+        scroll_ammt = 32
+           
 #   try:  
 #     val_new = r.value()  
 #     if SW.value()==0 and n==0:  
